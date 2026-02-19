@@ -1,0 +1,138 @@
+.role-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.role-card {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.role-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.role-icon {
+  font-size: 80px;
+  margin-bottom: 24px;
+  animation: rotate 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
+.role-title {
+  font-size: 48px;
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+
+.role-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.role-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.role-option {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.role-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-1);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.role-option:hover::before {
+  opacity: 0.1;
+}
+
+.role-option:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.role-option-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.role-option-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.role-option-desc {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.role-option-features {
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.feature {
+  padding: 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.feature::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--success);
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+  .role-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .role-title {
+    font-size: 36px;
+  }
+  
+  .role-option {
+    padding: 32px 24px;
+  }
+}
